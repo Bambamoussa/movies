@@ -127,6 +127,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
+  colorize:
+    dependency: transitive
+    description:
+      name: colorize
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   convert:
     dependency: transitive
     description:
@@ -457,6 +464,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  tmdb_api:
+    dependency: "direct main"
+    description:
+      name: tmdb_api
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.4"
   typed_data:
     dependency: transitive
     description:

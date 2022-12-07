@@ -21,7 +21,7 @@ MoviesModels _$MoviesModelsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MoviesModels {
   @JsonKey(name: 'id')
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'poster_path')
   String get poster => throw _privateConstructorUsedError;
   @JsonKey(name: 'adult')
@@ -46,7 +46,7 @@ abstract class $MoviesModelsCopyWith<$Res> {
       _$MoviesModelsCopyWithImpl<$Res, MoviesModels>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') String id,
+      {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'poster_path') String poster,
       @JsonKey(name: 'adult') bool adult,
       @JsonKey(name: 'release_date') String releaseDate,
@@ -78,7 +78,7 @@ class _$MoviesModelsCopyWithImpl<$Res, $Val extends MoviesModels>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       poster: null == poster
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -112,7 +112,7 @@ abstract class _$$_MoviesModelsCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') String id,
+      {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'poster_path') String poster,
       @JsonKey(name: 'adult') bool adult,
       @JsonKey(name: 'release_date') String releaseDate,
@@ -142,7 +142,7 @@ class __$$_MoviesModelsCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       poster: null == poster
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -183,7 +183,7 @@ class _$_MoviesModels implements _MoviesModels {
 
   @override
   @JsonKey(name: 'id')
-  final String id;
+  final int id;
   @override
   @JsonKey(name: 'poster_path')
   final String poster;
@@ -241,7 +241,7 @@ class _$_MoviesModels implements _MoviesModels {
 
 abstract class _MoviesModels implements MoviesModels {
   const factory _MoviesModels(
-          {@JsonKey(name: 'id') required final String id,
+          {@JsonKey(name: 'id') required final int id,
           @JsonKey(name: 'poster_path') required final String poster,
           @JsonKey(name: 'adult') required final bool adult,
           @JsonKey(name: 'release_date') required final String releaseDate,
@@ -254,7 +254,7 @@ abstract class _MoviesModels implements MoviesModels {
 
   @override
   @JsonKey(name: 'id')
-  String get id;
+  int get id;
   @override
   @JsonKey(name: 'poster_path')
   String get poster;

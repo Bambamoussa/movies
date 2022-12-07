@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:movies/core/constant/app_icons.dart';
- 
+
 part 'failure.freezed.dart';
+
 @freezed
 class Failure with _$Failure {
   const factory Failure.badRequest({String? message}) = FailureBadRequest;
@@ -39,5 +40,4 @@ class Failure with _$Failure {
     }
     return null;
   }
-  
 }

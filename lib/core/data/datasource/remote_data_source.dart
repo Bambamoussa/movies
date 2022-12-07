@@ -116,7 +116,9 @@ abstract class RemoteDataSource {
     Future<Response<T>> request() => dio.patch<T>(
           _path(apiEndpoint),
           data: body,
-          options: (token != null) ? Options(headers: {'Authorization': 'Bearer $token'}) : Options(),
+          options: (token != null)
+              ? Options(headers: {'Authorization': 'Bearer $token'})
+              : Options(),
         );
 
     return _performRequestApi<T>(request);
@@ -130,7 +132,9 @@ abstract class RemoteDataSource {
     Future<Response<T>> request() => dio.put<T>(
           _path(apiEndpoint),
           data: data,
-          options: (token != null) ? Options(headers: {'Authorization': 'Bearer $token'}) : Options(),
+          options: (token != null)
+              ? Options(headers: {'Authorization': 'Bearer $token'})
+              : Options(),
         );
 
     return _performRequestApi<T>(request);

@@ -5,12 +5,16 @@ import 'package:movies/di/di_ext.dart';
 import 'package:movies/features/movies/data/repository/movies_repository_impl.dart';
 import 'package:movies/features/movies/domain/repositories/movies_repository.dart';
 import 'package:movies/features/movies/domain/usescases/movies_usecases.dart';
+import 'package:movies/features/movies/presentation/cubit/movies_cubit.dart';
+import 'package:movies/features/movies/presentation/cubit/navigationbar_cubit.dart';
+import 'package:movies/features/movies/presentation/cubit/wish_list_cubit.dart';
 
 import '../features/movies/data/datasource/movie_remote_datasource.dart';
 part '../features/movies/common/movie_injection.dart';
+
 final sl = GetIt.instance;
 final Dio dio = Dio();
 
 void init() {
-   _featureMovies();
+  _featureMovies();
 }

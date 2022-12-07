@@ -8,7 +8,7 @@ part of 'movies_models.dart';
 
 _$_MoviesModels _$$_MoviesModelsFromJson(Map<String, dynamic> json) =>
     _$_MoviesModels(
-      id: json['id'] as String,
+      id: json['id'] as int,
       poster: json['poster_path'] as String,
       adult: json['adult'] as bool,
       releaseDate: json['release_date'] as String,

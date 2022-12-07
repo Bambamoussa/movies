@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MovieEntity {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get poster => throw _privateConstructorUsedError;
   bool get adult => throw _privateConstructorUsedError;
   String get releaseDate => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ abstract class $MovieEntityCopyWith<$Res> {
       _$MovieEntityCopyWithImpl<$Res, MovieEntity>;
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String poster,
       bool adult,
       String releaseDate,
@@ -67,7 +67,7 @@ class _$MovieEntityCopyWithImpl<$Res, $Val extends MovieEntity>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       poster: null == poster
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -101,7 +101,7 @@ abstract class _$$_MovieEntityCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String poster,
       bool adult,
       String releaseDate,
@@ -131,7 +131,7 @@ class __$$_MovieEntityCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       poster: null == poster
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -168,7 +168,7 @@ class _$_MovieEntity implements _MovieEntity {
       required this.overView});
 
   @override
-  final String id;
+  final int id;
   @override
   final String poster;
   @override
@@ -213,7 +213,7 @@ class _$_MovieEntity implements _MovieEntity {
 
 abstract class _MovieEntity implements MovieEntity {
   const factory _MovieEntity(
-      {required final String id,
+      {required final int id,
       required final String poster,
       required final bool adult,
       required final String releaseDate,
@@ -221,7 +221,7 @@ abstract class _MovieEntity implements MovieEntity {
       required final String overView}) = _$_MovieEntity;
 
   @override
-  String get id;
+  int get id;
   @override
   String get poster;
   @override

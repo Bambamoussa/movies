@@ -1,20 +1,18 @@
+import 'package:dio/dio.dart';
 import 'package:movies/core/constant/api_constant.dart';
-import 'package:tmdb_api/tmdb_api.dart';
+import 'package:movies/core/data/datasource/remote_data_source.dart';
 
-abstract class MovieRemoteDataSource{
-   Future <dynamic> getMovieList();
+abstract class MovieRemoteDataSource {
+  Future<dynamic> getMovieList();
 }
 
-class MovieRemoteDataSourceImpl  implements MovieRemoteDataSource{
-  MovieRemoteDataSourceImpl();
+class MovieRemoteDataSourceImpl extends RemoteDataSource
+    implements MovieRemoteDataSource {
+  MovieRemoteDataSourceImpl({required super.dio});
   @override
-  Future <dynamic> getMovieList(){
-   final  tmdb = TMDB(ApiKeys(ApiConstants.apiKeys,ApiConstants.accessToken),
-   logConfig:  const ConfigLogger(
-       showLogs: true, 
-       showErrorLogs: true,
-     ),
-   );
-   return tmdb.v3.movies.getPopular();
-  }   
+  Future<dynamic> getMovieList() async {
+    Options options = Options(contentType: 'application/json');
+    return performGetRequestApi(
+        apiEndpoint: ApiConstants.movieUrl, options: options);
+  }
 }

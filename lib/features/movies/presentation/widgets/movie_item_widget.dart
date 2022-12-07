@@ -11,43 +11,41 @@ class MovieItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final postPath = '${ApiConstants.postPath}${movie.poster}';
+    final postPath = ApiConstants.getPath(movie.poster);
     final wishList = context.read<WishListCubit>().getWishList;
-    final buttonValue = wishList.firstWhereOrNull(
+    final isFavorite = wishList.firstWhereOrNull(
               (element) => element.id == movie.id,
             ) ==
             null
         ? false
         : true;
-    ValueNotifier<bool> buttonIcon = ValueNotifier(buttonValue);
-    return Expanded(
-      child: Card(
-        child: ListTile(
-          leading: Image.network(postPath),
-          title: Column(children: [
-            Column(
-              children: [Text(movie.title), Text(movie.releaseDate)],
-            )
-          ]),
-          subtitle: Text(
-            movie.overView,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
-          trailing: ValueListenableBuilder(
-            valueListenable: buttonIcon,
-            builder: (context, value, child) => IconButton(
-              onPressed: () {
-                context.read<WishListCubit>().wish(movie);
-                buttonIcon.value = !value;
-              },
-              icon: Icon(
-                buttonIcon.value
-                    ? Icons.favorite
-                    : Icons.favorite_border_outlined,
-                color: Colors.red,
-                size: 24.0,
-              ),
+    ValueNotifier<bool> isFavoriteIcon = ValueNotifier(isFavorite);
+    return Card(
+      child: ListTile(
+        leading: Image.network(postPath),
+        title: Column(children: [
+          Column(
+            children: [Text(movie.title), Text(movie.releaseDate)],
+          )
+        ]),
+        subtitle: Text(
+          movie.overView,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
+        trailing: ValueListenableBuilder(
+          valueListenable: isFavoriteIcon,
+          builder: (context, value, child) => IconButton(
+            onPressed: () {
+              context.read<WishListCubit>().wish(movie);
+              isFavoriteIcon.value = !value;
+            },
+            icon: Icon(
+              isFavoriteIcon.value
+                  ? Icons.favorite
+                  : Icons.favorite_border_outlined,
+              color: Colors.red,
+              size: 24.0,
             ),
           ),
         ),

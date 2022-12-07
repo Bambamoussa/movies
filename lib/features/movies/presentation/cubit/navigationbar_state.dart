@@ -9,6 +9,6 @@ class NavigationbarState with _$NavigationbarState {
 }
 
 enum NavbarItem {
-  home,
+  movies,
   favorites;
 }

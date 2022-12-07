@@ -5,7 +5,6 @@ void _featureMovies() {
     // DataSources
     ..injectDataSource<MovieRemoteDataSource>(
         () => MovieRemoteDataSourceImpl(dio: dio))
-
     // Network
     ..injectNetwork<NetworkInfo>(() => NetworkInfoImpl())
     // Repositories

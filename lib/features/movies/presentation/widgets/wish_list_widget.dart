@@ -23,13 +23,13 @@ class _WishListWidgetState extends State<WishListWidget> {
           final movie = widget.movieList[index];
           final postPath = ApiConstants.getPath(movie.poster);
 
-          final isFavorite = wishList.firstWhereOrNull(
+          bool isFavorite = wishList.firstWhereOrNull(
                     (element) => element.id == movie.id,
                   ) ==
                   null
               ? false
               : true;
-          ValueNotifier<bool> isFavoriteIcon = ValueNotifier(isFavorite);
+
           return Card(
             child: ListTile(
               leading: Image.network(postPath),
@@ -43,22 +43,17 @@ class _WishListWidgetState extends State<WishListWidget> {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-              trailing: ValueListenableBuilder(
-                valueListenable: isFavoriteIcon,
-                builder: (context, value, child) => IconButton(
-                  onPressed: () {
-                    setState(() {
-                      context.read<WishListCubit>().wish(movie);
-                    });
-                    isFavoriteIcon.value = !value;
-                  },
-                  icon: Icon(
-                    isFavoriteIcon.value
-                        ? Icons.favorite
-                        : Icons.favorite_border_outlined,
-                    color: Colors.red,
-                    size: 24.0,
-                  ),
+              trailing: IconButton(
+                onPressed: () {
+                  setState(() {
+                    context.read<WishListCubit>().wish(movie);
+                    isFavorite = !isFavorite;
+                  });
+                },
+                icon: Icon(
+                  isFavorite ? Icons.favorite : Icons.favorite_border_outlined,
+                  color: Colors.red,
+                  size: 24.0,
                 ),
               ),
             ),

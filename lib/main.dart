@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/core/constant/app_constant.dart';
+import 'package:movies/core/style/style.dart';
 import 'package:movies/features/movies/presentation/cubit/wish_list_cubit.dart';
 import 'package:movies/features/movies/presentation/pages/my_home_page.dart';
 import 'di/injection_container.dart' as di;
@@ -22,8 +23,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: AppConstants.movies,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          textTheme: appMaterialEnglishLikeTextTheme),
       home: MultiBlocProvider(
         providers: [
           BlocProvider<NavigationCubit>(

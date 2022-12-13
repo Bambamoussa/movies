@@ -6,8 +6,19 @@ import 'package:movies/features/movies/presentation/cubit/wish_list_cubit.dart';
 import 'package:movies/features/movies/presentation/pages/my_home_page.dart';
 import 'di/injection_container.dart' as di;
 import 'features/movies/presentation/cubit/navigationbar_cubit.dart';
+import 'dart:io';
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
 
 void main() {
+  HttpOverrides.global = MyHttpOverrides();
   di.init();
   runApp(const MyApp());
 }
